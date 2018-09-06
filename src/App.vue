@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Todo List</router-link> |
-      <router-link to="/login">Login</router-link>
+      <router-link v-if="!this.$store.state.loggedIn" to="/login">Login</router-link>
+      <router-link v-else to="/login">Dashboard</router-link>
     </div>
     <router-view/>
   </div>
